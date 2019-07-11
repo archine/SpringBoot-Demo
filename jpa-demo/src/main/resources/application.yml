@@ -1,0 +1,24 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: jpa-demo
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/jpa_demo?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    password: root
+    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 10
+      idle-timeout: 30000
+      connection-timeout: 20000
+  jpa:
+    # 是否打印sql
+    show-sql: false
+    hibernate:
+      # 开启自动建表功能，一般选update，每次启动会对比实体和数据表结构是否相同，不相同会更新
+      ddl-auto: update
+    # 设置创表引擎为Innodb，不然默认为MyiSam
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
