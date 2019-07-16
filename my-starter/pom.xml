@@ -8,20 +8,12 @@
         <version>2.1.6.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.gj</groupId>
-    <artifactId>springboot-demo</artifactId>
+    <groupId>com.gjing</groupId>
+    <artifactId>my-starter</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springboot-demo</name>
-    <packaging>pom</packaging>
-    <description>SpringBoot相关Demo</description>
+    <name>my-starter</name>
+    <description>SpringBoot定义自己的starter</description>
 
-    <modules>
-        <module>starteventlistener</module>
-        <module>jpa-demo</module>
-        <module>aop</module>
-        <module>my-starter</module>
-        <module>my-starter-demo</module>
-    </modules>
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -31,10 +23,9 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
         </dependency>
     </dependencies>
 
