@@ -21,6 +21,7 @@
         <module>aop</module>
         <module>my-starter</module>
         <module>my-starter-demo</module>
+        <module>mybatis-postgre</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>

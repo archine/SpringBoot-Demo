@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gj.repository.UserDao">
+
+    <insert id="saveUser" parameterType="com.gj.domain.User" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        insert into "User"("user_name", "user_age", "user_phone")
+        values (#{userName}, #{userAge}, #{userPhone});
+    </insert>
+
+    <select id="findById" parameterType="java.lang.Integer" resultType="com.gj.domain.User">
+        select * from "User" where id = #{id};
+    </select>
+
+    <select id="findAll" resultType="com.gj.domain.User">
+        select * from "User";
+    </select>
+</mapper>
