@@ -1,0 +1,25 @@
+server:
+  port: 8086
+spring:
+  application:
+    name: mybatis-postgres
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/mybatis?characterEncoding=utf8&useSSL=false
+    driver-class-name: org.postgresql.Driver
+    username: root
+    password: root
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 2
+      idle-timeout: 30000
+      connection-timeout: 20000
+swagger:
+  base-package: com.gj.web.api
+  description: SpringBoot整合Mybatis和Postgres
+  version: 1.0
+mybatis:
+  type-aliases-package: com.gj.domain
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
