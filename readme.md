@@ -6,3 +6,4 @@
 * **my-starter**: 自己定义starter
 * **my-starter-demo**: starter测试项目
 * **mybatis-postgre**: SpringBoot整合mybatis和postgresSql
+* **mybatis-demo**：SpringBoot使用mybatis

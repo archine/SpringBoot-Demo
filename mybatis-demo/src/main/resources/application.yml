@@ -1,0 +1,27 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: mybatis-demo
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/demo?characterEncoding=utf8&&useSSL=false
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      # 开启自动建表功能，一般选update，每次启动会对比实体和数据表结构是否相同，不相同会更新
+      ddl-auto: update
+    # 设置创表引擎为Innodb，不然默认为MyiSam
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+mybatis:
+  # 实体类包路径
+  type-aliases-package: com.gjing.entity
+  # 配置驼峰转换
+  configuration:
+    map-underscore-to-camel-case: true
+  # mapper文件路径
+  mapper-locations: classpath:mappers/*.xml
+swagger:
+  base-package: com.gjing.controller
+  title: Spring-Mybatis的demo
