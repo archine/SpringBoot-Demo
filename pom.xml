@@ -22,6 +22,8 @@
         <module>my-starter</module>
         <module>my-starter-demo</module>
         <module>mybatis-postgre</module>
+        <module>mybatis-demo</module>
+        <module>quartz</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>

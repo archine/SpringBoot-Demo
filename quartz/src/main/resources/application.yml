@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: quartz-demo
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/demo?characterEncoding=utf-8&useSSL=true&serverTimezone=GMT%2B8
+    username: root
+    password: root
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+  quartz:
+    # quartz 相关属性配置
+    properties:
+      org:
+        quartz:
+          scheduler:
+            instanceName: clusteredScheduler
+            # ID设置为自动获取 每一个必须不同
+            instanceId: AUTO
+          # 持久化配置
+          jobStore:
+            # 数据保存方式为持久化
+            class: org.quartz.impl.jdbcjobstore.JobStoreTX
+            # 支持集群
+            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+            # quartz内部表的前缀
+            tablePrefix: QRTZ_
+            # 是否加入集群
+            isClustered: true
+            clusterCheckinInterval: 10000
+            useProperties: false
+          # 线程池配置
+          threadPool:
+            # 大部分场景都实用
+            class: org.quartz.simpl.SimpleThreadPool
+            # 线程数量
+            threadCount: 10
+            # 线程优先级
+            threadPriority: 5
+
+            threadsInheritContextClassLoaderOfInitializingThread: true
+    # 数据库方式
+    job-store-type: jdbc

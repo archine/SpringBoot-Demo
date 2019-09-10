@@ -7,3 +7,4 @@
 * **my-starter-demo**: starter测试项目
 * **mybatis-postgre**: SpringBoot整合mybatis和postgresSql
 * **mybatis-demo**：SpringBoot使用mybatis
+* **quartz**：SpringBoot整合Quartz
