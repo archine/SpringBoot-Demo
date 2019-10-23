@@ -1,4 +1,4 @@
-package com.gj.web.dto;
+package com.gj.domain.dto;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
